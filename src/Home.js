@@ -1,10 +1,5 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
-import AddRetails from "./retails/AddRetails";
-
 import Nav from 'react-bootstrap/Nav';
 
 
