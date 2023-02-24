@@ -51,8 +51,24 @@ class AddRetails extends Component {
     }
     addNewItems = (event) => {
         event.preventDefault();
+        var axios = require('axios');
+        axios.post('http://localhost:8090/goods/add',
+            {
+                name: this.state.name,
+                code: this.state.code,
+                quantity: this.state.quantity,
+                price: this.state.price
+            })
+            .then((response) => {
 
-
+                if (response.status === 200) {
+                    this.resetForm();
+                    alert(" Bạn đã thêm mới thành công !");
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
     render() {
         return (
