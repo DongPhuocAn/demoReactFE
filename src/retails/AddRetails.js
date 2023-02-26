@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from '../Home';
 import { Container, Row } from 'react-bootstrap';
 import { Form, Button, Col } from 'react-bootstrap';
+import axios from 'axios';
 
 class AddRetails extends Component {
     constructor(props) {
@@ -51,7 +52,7 @@ class AddRetails extends Component {
     }
     addNewItems = (event) => {
         event.preventDefault();
-        var axios = require('axios');
+        //var axios = require('axios');
         axios.post('http://localhost:8090/goods/add',
             {
                 name: this.state.name,
@@ -74,10 +75,10 @@ class AddRetails extends Component {
         return (
             <>
                 <Home />
-                <Container>
+                <Container >
                     <div className="panel panel-success">
                         <Row>
-                            <div className="panel-heading" style={{ fontSize: 20, color: "#9932CC", backgroundColor: "#F8F8FF", marginBottom: 15 }}>Nhập Thông Tin Hàng Hóa </div>
+                            <div className="panel-heading" style={{ fontSize: 20, color: "#9932CC", backgroundColor: "#F8F8FF", marginTop: 5, marginBottom: 15 }}>Nhập Thông Tin Hàng Hóa </div>
                         </Row>
                         <Row>
                             <div className="panel-body">
@@ -117,7 +118,7 @@ class AddRetails extends Component {
                                             </Button>
                                         </Col>
                                         <Col xs="4">
-                                            <Button variant="outline-info" type="reset">
+                                            <Button variant="outline-info" type="reset" onClick={this.resetForm}>
                                                 Reset
                                             </Button>
                                         </Col>

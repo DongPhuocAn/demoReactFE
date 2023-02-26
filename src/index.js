@@ -26,6 +26,7 @@ import {
 import "./index.css";
 import AddRetails from "./retails/AddRetails";
 import App from './App';
+import AddBill from "./bills/AddBill";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,14 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/home",
+    element: <App />,
+  },
+  {
+    path: "/bills/add",
+    element: <AddBill />,
   },
 ]);
 
