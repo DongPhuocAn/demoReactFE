@@ -180,10 +180,18 @@ class AddBill extends React.Component {
                                 }
                             </Row>
                             <Row>
-                                <Button variant="outline-secondary" onClick={this.handleShow}>
-                                    Thêm Mặt Hàng Vào Hóa Đơn
-                                </Button>
+                                <Col xs="4">
+                                    <Button variant="outline-secondary" onClick={this.handleShow}>
+                                        Thêm Mặt Hàng Vào Hóa Đơn
+                                    </Button>
+                                </Col>
+                                <Col xs="4">
+                                    <Button variant="outline-success" onClick={this.saveData} type="submit">
+                                        Thêm
+                                    </Button>
+                                </Col>
                             </Row>
+
                             <Row>
                                 <>
                                     <Modal show={this.state.show} onHide={this.handleClose}>
@@ -232,11 +240,6 @@ class AddBill extends React.Component {
                                         </Modal.Footer>
                                     </Modal>
                                 </>
-                            </Row>
-                            <Row style={{ marginTop: 10, marginBottom: 0 }}>
-                                <Button variant="outline-success" onClick={this.saveData} >
-                                    Thêm
-                                </Button>
                             </Row>
                         </div>
                     </div>

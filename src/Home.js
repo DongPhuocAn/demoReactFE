@@ -21,7 +21,7 @@ class Home extends React.Component {
                     <Nav.Link eventKey="link-2" href="/bills/add" >Add Retail</Nav.Link>
                 </Nav.Item>
                 <Nav.Item >
-                    <Nav.Link eventKey="link-2" >
+                    <Nav.Link eventKey="link-3" href="/retail/list" >
                         Search Retails
                     </Nav.Link>
                 </Nav.Item>
