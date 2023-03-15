@@ -20,13 +20,13 @@ class AddBill extends React.Component {
         this.saveData = this.saveData.bind(this);
 
         this.state = {
-            // ten hoa don :
+            // invoice name :
             name: '',
-            // Ten khach hang:
+            // invoice name:
             customer: '',
-            // Dia chi khach hang:
+            // customer address :
             address: '',
-            // list san pham mua :
+            // list purchased products :
             list: [],
             showItems: false,
             // show popup form:
@@ -132,14 +132,14 @@ class AddBill extends React.Component {
                 <Container>
                     <div className="panel panel-default">
                         <Row>
-                            <div className="panel-heading" style={{ fontSize: 20, color: "#9932CC", backgroundColor: "#F8F8FF", marginTop: 5, marginBottom: 15 }}>Nhập Thông Tin Hóa Đơn </div>
+                            <div className="panel-heading" style={{ fontSize: 20, color: "#9932CC", backgroundColor: "#F8F8FF", marginTop: 5, marginBottom: 15 }}>Enter invoice information </div>
                         </Row>
 
                         <div className="panel-body">
                             <Row>
                                 <Col xs="12">
                                     <Form.Group controlId="formBasicNameBill">
-                                        <Form.Label>Nhập Tên Hóa Đơn </Form.Label>
+                                        <Form.Label>Enter an invoice name </Form.Label>
                                         <Form.Control type="text" placeholder="Enter bill name" onChange={this.changeName} required value={this.state.name} />
                                     </Form.Group>
                                 </Col>
@@ -147,13 +147,13 @@ class AddBill extends React.Component {
                             <Row>
                                 <Col xs="6">
                                     <Form.Group controlId="formBasicCode">
-                                        <Form.Label>Nhập Tên Khách Hàng</Form.Label>
+                                        <Form.Label>Enter the customer's name</Form.Label>
                                         <Form.Control type="text" placeholder="Enter customer " onChange={this.changeCustomer} required value={this.state.customer} />
                                     </Form.Group>
                                 </Col>
                                 <Col xs="6">
                                     <Form.Group controlId="formBasicCode">
-                                        <Form.Label>Địa Chỉ Khách Hàng </Form.Label>
+                                        <Form.Label>Customer address </Form.Label>
                                         <Form.Control type="text" placeholder="Enter customer " onChange={this.changeAddress} required value={this.state.address} />
                                     </Form.Group>
                                 </Col>
@@ -163,10 +163,10 @@ class AddBill extends React.Component {
                                     <Table>
                                         <thead>
                                             <tr>
-                                                <th>Mã Hàng</th>
-                                                <th>Tên Mặt Hàng</th>
-                                                <th>Giá</th>
-                                                <th>Số Lượng</th>
+                                                <th>Item code</th>
+                                                <th>Item name</th>
+                                                <th>Price</th>
+                                                <th>Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -182,12 +182,12 @@ class AddBill extends React.Component {
                             <Row>
                                 <Col xs="4">
                                     <Button variant="outline-secondary" onClick={this.handleShow}>
-                                        Thêm Mặt Hàng Vào Hóa Đơn
+                                        Add items to an invoice
                                     </Button>
                                 </Col>
                                 <Col xs="4">
                                     <Button variant="outline-success" onClick={this.saveData} type="submit">
-                                        Thêm
+                                        Add
                                     </Button>
                                 </Col>
                             </Row>
@@ -196,20 +196,20 @@ class AddBill extends React.Component {
                                 <>
                                     <Modal show={this.state.show} onHide={this.handleClose}>
                                         <Modal.Header closeButton>
-                                            <Modal.Title> Thêm Mặt Hàng Vào Hóa Đơn </Modal.Title>
+                                            <Modal.Title> Add items to an invoice </Modal.Title>
                                         </Modal.Header>
                                         <Modal.Body>
                                             <Form>
                                                 <Row>
                                                     <Col xs="6">
                                                         <Form.Group controlId="iCode">
-                                                            <Form.Label>Mã Hàng</Form.Label>
+                                                            <Form.Label>Item code</Form.Label>
                                                             <Form.Control type="text" onChange={this.changeICode} value={this.state.iCode} />
                                                         </Form.Group>
                                                     </Col>
                                                     <Col xs="6">
                                                         <Form.Group controlId="iName">
-                                                            <Form.Label>Tên Mặt Hàng</Form.Label>
+                                                            <Form.Label>Item name</Form.Label>
                                                             <Form.Control type="text" onChange={this.changeIName} value={this.state.iName} />
                                                         </Form.Group>
                                                     </Col>
@@ -217,13 +217,13 @@ class AddBill extends React.Component {
                                                 <Row>
                                                     <Col xs="6">
                                                         <Form.Group controlId="iPrice">
-                                                            <Form.Label>Giá </Form.Label>
+                                                            <Form.Label>Price </Form.Label>
                                                             <Form.Control type="number" onChange={this.changeIPrice} value={this.state.iPrice} />
                                                         </Form.Group>
                                                     </Col>
                                                     <Col xs="6">
                                                         <Form.Group controlId="iQuantity">
-                                                            <Form.Label>Số Lượng </Form.Label>
+                                                            <Form.Label>Amount</Form.Label>
                                                             <Form.Control type="text" onChange={this.changeIQuantity} value={this.state.iQuantity} />
                                                         </Form.Group>
                                                     </Col>
@@ -235,7 +235,7 @@ class AddBill extends React.Component {
                                                 Cancel
                                             </Button>
                                             <Button variant="primary" onClick={this.addItemsToList}>
-                                                Thêm Mặt Hàng
+                                                Add items
                                             </Button>
                                         </Modal.Footer>
                                     </Modal>

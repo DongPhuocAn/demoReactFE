@@ -64,7 +64,7 @@ class AddRetails extends Component {
 
                 if (response.status === 200) {
                     this.resetForm();
-                    alert(" Bạn đã thêm mới thành công !");
+                    alert(" You have successfully added new !");
                 }
             })
             .catch(function (error) {
@@ -78,7 +78,7 @@ class AddRetails extends Component {
                 <Container >
                     <div className="panel panel-success">
                         <Row>
-                            <div className="panel-heading" style={{ fontSize: 20, color: "#9932CC", backgroundColor: "#F8F8FF", marginTop: 5, marginBottom: 15 }}>Nhập Thông Tin Hàng Hóa </div>
+                            <div className="panel-heading" style={{ fontSize: 20, color: "#9932CC", backgroundColor: "#F8F8FF", marginTop: 5, marginBottom: 15 }}>Enter commodity information</div>
                         </Row>
                         <Row>
                             <div className="panel-body">
@@ -86,7 +86,7 @@ class AddRetails extends Component {
                                     <Row>
                                         <Col xs="6">
                                             <Form.Group controlId="formBasicName">
-                                                <Form.Label>Tên Hàng</Form.Label>
+                                                <Form.Label>Item name</Form.Label>
                                                 <Form.Control type="text" placeholder="Enter name" onChange={this.changeName} required value={this.state.name} />
                                             </Form.Group>
                                         </Col>
@@ -100,13 +100,13 @@ class AddRetails extends Component {
                                     <Row>
                                         <Col xs="6">
                                             <Form.Group controlId="formBasicQuantity">
-                                                <Form.Label>Số Lượng </Form.Label>
+                                                <Form.Label>Amount </Form.Label>
                                                 <Form.Control type="number" placeholder="Enter quantity" onChange={this.changeQuantity} required value={this.state.quantity} />
                                             </Form.Group>
                                         </Col>
                                         <Col xs="6">
                                             <Form.Group controlId="formBasicPrice">
-                                                <Form.Label>Giá </Form.Label>
+                                                <Form.Label>Price </Form.Label>
                                                 <Form.Control type="text" placeholder="Enter price code" onChange={this.changePrice} required value={this.state.price} />
                                             </Form.Group>
                                         </Col>
@@ -114,7 +114,7 @@ class AddRetails extends Component {
                                     <Row style={{ marginTop: 10, marginBottom: 10 }}>
                                         <Col xs="4">
                                             <Button variant="outline-primary" type="submit" onClick={this.addNewItems}>
-                                                Thêm
+                                                Add
                                             </Button>
                                         </Col>
                                         <Col xs="4">

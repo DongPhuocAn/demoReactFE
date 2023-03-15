@@ -218,7 +218,7 @@ class DisplayList extends React.Component {
                 .then((response) => {
 
                     if (response.status === 200) {
-                        alert(' Xoa Thanh Cong ');
+                        alert(' Deleted ');
                     }
                 })
                 .catch(function (error) {
@@ -301,17 +301,17 @@ class DisplayList extends React.Component {
                     </div>
                     <Row>
                         {this.state.answer &&
-                            <p><i>Không tìm thấy hàng hóa thõa mãn điều kiện tìm kiếm của bạn ! Vui lòng thử lại !</i></p>
+                            <p><i>Can't find merchandise that satisfies your search conditions! Please try again !</i></p>
                         }
                     </Row>
                     <Row style={{ marginTop: 20, marginBottom: 20 }}>
                         <Table>
                             <thead>
                                 <tr>
-                                    <th>Tên </th>
+                                    <th>Name </th>
                                     <th>Code</th>
-                                    <th>Số Lượng</th>
-                                    <th>Giá</th>
+                                    <th>Amount</th>
+                                    <th>Price</th>
                                     <th colSpan="2">Action</th>
 
                                 </tr>
@@ -341,14 +341,14 @@ class DisplayList extends React.Component {
                         <>
                             <Modal show={this.state.show} onHide={this.handleClose}>
                                 <Modal.Header closeButton>
-                                    <Modal.Title>Cập nhật hàng hóa </Modal.Title>
+                                    <Modal.Title>Update merchandise </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
                                     <Form>
                                         <Row>
                                             <Col xs="6">
                                                 <Form.Group controlId="formBasicName">
-                                                    <Form.Label>Tên Hàng</Form.Label>
+                                                    <Form.Label>Item name</Form.Label>
                                                     <Form.Control type="text" placeholder="Enter name" onChange={this.changeName} value={this.state.updateName} />
                                                 </Form.Group>
                                             </Col>
@@ -362,13 +362,13 @@ class DisplayList extends React.Component {
                                         <Row>
                                             <Col xs="6">
                                                 <Form.Group controlId="formBasicQuantity">
-                                                    <Form.Label>Số lượng </Form.Label>
+                                                    <Form.Label>Amount </Form.Label>
                                                     <Form.Control type="number" placeholder="Enter Quantity" onChange={this.changeQuantity} value={this.state.updateQuantity} />
                                                 </Form.Group>
                                             </Col>
                                             <Col xs="6">
                                                 <Form.Group controlId="formBasicPrice">
-                                                    <Form.Label>Giá</Form.Label>
+                                                    <Form.Label>Price </Form.Label>
                                                     <Form.Control type="number" step="any" placeholder="Enter price" onChange={this.changePrice} value={this.state.updatePrice} />
                                                 </Form.Group>
                                             </Col>
@@ -377,10 +377,10 @@ class DisplayList extends React.Component {
                                 </Modal.Body>
                                 <Modal.Footer>
                                     <Button variant="secondary" onClick={this.handleClose}>
-                                        Hủy
+                                        Cancle
                                     </Button>
                                     <Button variant="primary" onClick={this.handleUpdateData}>
-                                        Cập nhật
+                                        Update
                                     </Button>
                                 </Modal.Footer>
                             </Modal>

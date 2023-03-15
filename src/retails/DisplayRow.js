@@ -29,10 +29,10 @@ class DisplayRow extends React.Component {
                 <td>{this.state.quantity}</td>
                 <td>{this.state.price}</td>
                 <td>
-                <Button variant="outline-danger" onClick={this.handleRemove.bind(this)}>Xóa </Button>
+                    <Button variant="outline-danger" onClick={this.handleRemove.bind(this)}>Delete </Button>
                 </td>
                 <td>
-                <Button variant="outline-danger" onClick={this.handleUpdate.bind(this)}>Cập nhật </Button>
+                    <Button variant="outline-danger" onClick={this.handleUpdate.bind(this)}>Update  </Button>
                 </td>
             </tr>
         )
